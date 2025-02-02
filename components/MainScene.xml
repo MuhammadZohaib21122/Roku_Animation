@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="MainScene" extends="Scene">
+
+    <script type="text/brightscript" uri="MainScene.brs" />
+
+
+    <customization suspendhandler="customSuspend" />
+    <customization resumehandler="customResume" />
+    <interface>
+
+        <field id="inputArgs" type="assocarray" />
+        <field id="launchArgs" type="assocarray" />
+
+
+        <field id="exitApp" type="boolean" alwaysNotify="true" />
+
+
+    </interface>
+
+    <children>
+
+
+        <Button id="myBtn" focusable="true" iconUri="" text="" focusedIconUri="" visible="true"
+            translation="[0, 0]" maxWidth="72" minWidth="72" height="72"
+            focusFootprintBitmapUri="pkg:/images/home screen/home_right.png"
+            focusBitmapUri="pkg:/images/home screen/home_right_f.png" showFocusFootprint="true" />
+
+
+        <Animation id="transAnimation" duration="4" repeat="true" easeFunction="linear">
+            <Vector2DFieldInterpolator id="myInterp2" key="[0.0, 0.25, 0.50, 0.75, 1.0]"
+                keyValue="[ [0, 0], [1848, 0], [1848, 1008], [0, 1008], [0, 0] ]"
+                fieldToInterp="myBtn.translation" />
+        </Animation>
+
+        <!-- <Group id="ExitGroup" visible="false" translation="[416,306]">
+            <Poster id="ExitGroupPoster" uri="pkg:/images/home screen/exit_dialog.png" translation="[0,0]" width="1088" height="469" />
+
+            <Button id="btnExitApp" focusBitmapUri="pkg:/images/start focus 1.png" iconUri="" focusedIconUri=""
+        focusFootprintBitmapUri="" maxWidth="381" minWidth="381" height="156"
+        translation="[154,285]">
+                <Poster id="ExitAppBtnPoster" uri="" width="340" height="116" translation="[18,20]" />
+            </Button>
+            <Button id="btnResumeApp" focusBitmapUri="pkg:/images/start focus 1.png" iconUri=""
+        focusedIconUri="" focusFootprintBitmapUri="" maxWidth="381" minWidth="381" height="156"
+        translation="[554,285]">
+                <Poster id="ResumeAppBtnPoster" uri="" width="340" height="116" translation="[18,20]" />
+            </Button>
+
+        </Group> -->
+
+    </children>
+</component>
