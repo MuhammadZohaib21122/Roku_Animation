@@ -14,10 +14,6 @@ function init()
     m.top.setFocus(true)
     m.myBtn.setFocus(true)
 
-   
-
-
-
 
 end function
 
@@ -48,14 +44,6 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
             if m.myBtn.hasFocus()
 
-                m.transL= m.myBtn.translation
-                ?"Log 1"m.transL
-                 m.transLX = m.transL.[0]
-                 m.transLY = m.transL.[1]
-
-                ?"Log 2"m.transLX
-                ?"Log 3"m.transLY
-
                 m.ExitGroup.visible = true
                 m.transAnimation.control = "stop"
                 m.myBtn.setFocus(false)
@@ -79,6 +67,19 @@ function onKeyEvent(key as string, press as boolean) as boolean
             m.exitAppButton.setFocus(false)
             m.cancelExitDialogeButton.setFocus(true)
 
+        else if key = "play" and m.myBtn.hasFocus()
+            ?"Play Button press ======================"
+           m.transAnimation.control = "stop"
+
+           m.transL= m.myBtn.translation
+           ?"Log 1"m.transL
+            m.transLX = m.transL.[0]
+            m.transLY = m.transL.[1]
+
+           ?"Log 2"m.transLX
+           ?"Log 3"m.transLY
+           
+           handled = true
         end if
 
 
