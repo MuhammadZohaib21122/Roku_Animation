@@ -26,7 +26,7 @@
             focusBitmapUri="pkg:/images/home screen/home_right_f.png" showFocusFootprint="true" />
 
 
-        <Animation id="transAnimation" duration="4" repeat="false" easeFunction="linear">
+        <Animation id="transAnimation" duration="10" repeat="false" easeFunction="linear">
             <Vector2DFieldInterpolator id="myInterp2" key="[0.0, 0.25, 0.50, 0.75, 1.0]"
                 keyValue="[ [0, 0], [1848, 0], [1848, 1008], [0, 1008], [0, 0] ]"
                 fieldToInterp="myBtn.translation" />
