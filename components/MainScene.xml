@@ -26,27 +26,31 @@
             focusBitmapUri="pkg:/images/home screen/home_right_f.png" showFocusFootprint="true" />
 
 
-        <Animation id="transAnimation" duration="4" repeat="true" easeFunction="linear">
+        <Animation id="transAnimation" duration="4" repeat="false" easeFunction="linear">
             <Vector2DFieldInterpolator id="myInterp2" key="[0.0, 0.25, 0.50, 0.75, 1.0]"
                 keyValue="[ [0, 0], [1848, 0], [1848, 1008], [0, 1008], [0, 0] ]"
                 fieldToInterp="myBtn.translation" />
         </Animation>
 
-        <!-- <Group id="ExitGroup" visible="false" translation="[416,306]">
-            <Poster id="ExitGroupPoster" uri="pkg:/images/home screen/exit_dialog.png" translation="[0,0]" width="1088" height="469" />
+        <Group id="ExitGroup" visible="false" translation="[0,0]">
+            <Poster width="1920" height="1080" uri="pkg:/images/background_overlay.png" />
+            <Poster id="feedbackOverlay" width="1920" height="1080"
+                uri="pkg:/images/home screen/exit_dialog.png" />
 
-            <Button id="btnExitApp" focusBitmapUri="pkg:/images/start focus 1.png" iconUri="" focusedIconUri=""
-        focusFootprintBitmapUri="" maxWidth="381" minWidth="381" height="156"
-        translation="[154,285]">
-                <Poster id="ExitAppBtnPoster" uri="" width="340" height="116" translation="[18,20]" />
-            </Button>
-            <Button id="btnResumeApp" focusBitmapUri="pkg:/images/start focus 1.png" iconUri=""
-        focusedIconUri="" focusFootprintBitmapUri="" maxWidth="381" minWidth="381" height="156"
-        translation="[554,285]">
-                <Poster id="ResumeAppBtnPoster" uri="" width="340" height="116" translation="[18,20]" />
-            </Button>
+            <Button id="exitButton" focusable="true" iconUri="" text="" focusedIconUri=""
+                visible="true" translation="[626, 633]"
+                maxWidth="320" minWidth="320" height="80"
+                focusBitmapUri="pkg:/images/home screen/no_button.png"
+                focusFootprintBitmapUri="pkg:/images/home screen/no_button_f.png"
+                showFocusFootprint="true" />
 
-        </Group> -->
+            <Button id="cancelExitButton" focusable="true" iconUri="" focusedIconUri="" text=""
+                visible="true" translation="[994, 633]"
+                maxWidth="320" minWidth="320" height="80"
+                focusBitmapUri="pkg:/images/home screen/yes_button.png"
+                focusFootprintBitmapUri="pkg:/images/home screen/yes_button_f.png"
+                showFocusFootprint="true" />
+        </Group>
 
     </children>
 </component>
