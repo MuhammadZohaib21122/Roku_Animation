@@ -78,7 +78,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
            ?"Log 2"m.transLX
            ?"Log 3"m.transLY
-           
+            
            handled = true
         end if
 
