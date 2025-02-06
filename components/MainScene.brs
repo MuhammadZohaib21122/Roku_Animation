@@ -88,41 +88,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
     return handled
 end function
 
-
-
-
-' function onKeyEvent(key as string, press as boolean) as boolean
-'     handled = false
-
-'     if press then
-        
-'         if key = "back" then
-'             if m.myBtn.hasFocus() then
-'                 ?"band kr na app. kya howa?"
-'                 m.ExitGroup.visible = true
-'                 m.transAnimation.control = "stop"
-'                 m.myBtn.setFocus(false)
-'                 m.cancelExitDialogeButton.setFocus(true)
-'                 handled = true
-'             else if m.ExitGroup.visible = true then
-'                 m.ExitGroup.visible = false
-'                 m.myBtn.setFocus(true)
-'                 handled = true
-'             end if
-'         end if
-
-       
-'         if key = "right" and m.cancelExitDialogeButton.hasFocus() then
-'             m.cancelExitDialogeButton.setFocus(false)
-'             m.exitAppButton.setFocus(true)
-'             handled = true
-'         else if key = "left" and m.exitAppButton.hasFocus() then
-'             m.exitAppButton.setFocus(false)
-'             m.cancelExitDialogeButton.setFocus(true)
-'             handled = true
-'         end if
-
-        
+   
 '         if m.myBtn.hasFocus() then
 '             if key = "right" then
 '                 moveButton(1) 
