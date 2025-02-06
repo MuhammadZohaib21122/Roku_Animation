@@ -20,6 +20,8 @@
     <children>
 
 
+  <Poster width="1920" height="1080" uri="pkg:/images/background_overlay.png" />
+
         <Button id="myBtn" focusable="true" iconUri="" text="" focusedIconUri="" visible="true"
             translation="[0, 0]" maxWidth="72" minWidth="72" height="72"
             focusFootprintBitmapUri="pkg:/images/home screen/home_right.png"
