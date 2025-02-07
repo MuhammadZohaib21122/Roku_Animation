@@ -7,9 +7,9 @@ function init()
     m.myBtn = m.top.findNode("myBtn")
     m.myBtn.observeField("buttonSelected", "myButtonClick")
 
-    ' m.currentPosition = [0, 0] 
-    ' m.positions = [ [0, 0], [1848, 0], [1848, 1008], [0, 1008] ] ' 4 corner positions
-    ' m.index = 0 
+    m.currentPosition = [0, 0] 
+    m.positions = [ [0, 0], [1848, 0], [1848, 1008], [0, 1008] ] ' 4 corner positions
+    m.index = 0 
 
     m.top.setFocus(true)
     m.myBtn.setFocus(true)
