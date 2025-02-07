@@ -24,8 +24,8 @@
 
         <Button id="myBtn" focusable="true" iconUri="" text="" focusedIconUri="" visible="true"
             translation="[0, 0]" maxWidth="72" minWidth="72" height="72"
-            focusFootprintBitmapUri="pkg:/images/home screen/home_right.png"
-            focusBitmapUri="pkg:/images/home screen/home_right_f.png" showFocusFootprint="true" />
+            focusFootprintBitmapUri="pkg:/images/Button2UF.png"
+            focusBitmapUri="pkg:/images/Button2F.png" showFocusFootprint="true" />
 
 
         <Animation id="transAnimation" duration="10" repeat="true" easeFunction="linear">
