@@ -28,9 +28,9 @@
             focusBitmapUri="pkg:/images/Button2F.png" showFocusFootprint="true" />
 
 
-        <Animation id="transAnimation" duration="10" repeat="true" easeFunction="linear">
-            <Vector2DFieldInterpolator id="myInterp2" key="[0.0, 0.25, 0.50, 0.75, 1.0]"
-                keyValue="[ [0, 0], [1848, 0], [1848, 1008], [0, 1008], [0, 0] ]"
+        <Animation id="transAnimation" duration="5" repeat="false" easeFunction="linear">
+            <Vector2DFieldInterpolator id="myInterp2" key="[0.0,0.90]"
+                keyValue="[ [0, 0],[0, 0] ]"
                 fieldToInterp="myBtn.translation" />
         </Animation>
 
