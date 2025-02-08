@@ -6,10 +6,14 @@ function init()
     m.cancelExitDialogeButton.observeField("buttonSelected", "cancelExitDialoge")
     m.myBtn = m.top.findNode("myBtn")
     m.myBtn.observeField("buttonSelected", "myButtonClick")
+    m.myInterp2 = m.top.FindNode("myInterp2")
+    m.transAnimation = m.top.FindNode("transAnimation")
+    m.transLX = 0
+    m.transLY = 0
+    m.transL=[0,0]
 
-    ' m.currentPosition = [0, 0] 
-    ' m.positions = [ [0, 0], [1848, 0], [1848, 1008], [0, 1008] ] ' 4 corner positions
-    ' m.index = 0 
+    m.X = 0
+    m.Y = 0
 
     m.top.setFocus(true)
     m.myBtn.setFocus(true)
@@ -18,8 +22,15 @@ function init()
 end function
 
 function myButtonClick()
-    m.transAnimation = m.top.FindNode("transAnimation")
+   
+    
+    ?"Tr X on BC"m.transLX
+    ?"Tr Y on BC"m.transLY
+
     m.transAnimation.control = "start"
+        m.transL= m.myBtn.translation
+        ?"Log 1......"m.transL
+
 end function
 
 
@@ -27,6 +38,8 @@ function cancelExitDialoge()
     m.ExitGroup.visible = false
     m.myBtn.setFocus(true)
     m.ExitGroup.visible = false
+    m.transL= m.myBtn.translation
+    ?"Log 2"m.transL
 
 end function
 
@@ -45,7 +58,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
             if m.myBtn.hasFocus()
 
                 m.ExitGroup.visible = true
-                m.transAnimation.control = "stop"
+                ' m.transAnimation.control = "stop"
                 m.myBtn.setFocus(false)
                 m.cancelExitDialogeButton.setFocus(true)
 
@@ -71,56 +84,53 @@ function onKeyEvent(key as string, press as boolean) as boolean
             ?"Play Button press ======================"
            m.transAnimation.control = "stop"
 
-           m.transL= m.myBtn.translation
-           ?"Log 1"m.transL
-            m.transLX = m.transL.[0]
-            m.transLY = m.transL.[1]
+           m.transLF= m.myBtn.translation
+           ?"Log 3"m.transLF
+            m.transLX = m.transLF.[0]
+            m.transLY = m.transLF.[1]
 
-           ?"Log 2"m.transLX
-           ?"Log 3"m.transLY
+           ?"Log 4"m.transLX
+           ?"Log 5"m.transLY
             
            handled = true
         end if
 
 
+        if key = "right" and m.myBtn.hasFocus()
+            
+            m.myInterp2 .keyValue=[[0,0],[m.X +1848, m.Y]]
+
+            m.transAnimation.control = "start"
+            m.transL= m.myBtn.translation
+            ?"Log 1......"m.transL
+
+        else if key = "down" and m.myBtn.hasFocus()
+            
+            m.myInterp2 .keyValue=[[1848,0],[1848, m.Y + 1008]]
+
+            m.transAnimation.control = "start"
+            m.transL= m.myBtn.translation
+            ?"Log 1......"m.transL
+
+        else if key = "back" and m.myBtn.hasFocus()
+            
+            m.myInterp2 .keyValue=[[0,1008],[1848, m.Y + 1008]]
+
+            m.transAnimation.control = "start"
+            m.transL= m.myBtn.translation
+            ?"Log 1......"m.transL
+
+        else if key = "down" and m.myBtn.hasFocus()
+            
+            m.myInterp2 .keyValue=[[0,1008],[m.X, m.Y]]
+
+            m.transAnimation.control = "start"
+            m.transL= m.myBtn.translation
+            ?"Log 1......"m.transL
+        end if
     end if
 
     return handled
 end function
-
-   
-'         if m.myBtn.hasFocus() then
-'             if key = "right" then
-'                 moveButton(1) 
-'                 handled = true
-'             else if key = "left" then
-'                 moveButton(-1) 
-'                 handled = true
-'             else if key = "down" then
-'                 moveButton(-1) 
-'                 handled = true
-'             else if key = "up" then
-'                 moveButton(-1) 
-'                 handled = true
-'             end if
-'         end if
-'     end if
-
-'     return handled
-' end function
-
-
-' sub moveButton(direction as integer)
-'     if m.myBtn <> invalid then
-'         if m.positions = invalid then
-'             m.positions = [ [0, 0], [1848, 0], [1848, 1008], [0, 1008] ] 
-'             m.index = 0 
-'         end if
-
-       
-'         m.index = (m.index + direction + 4) mod 4
-'         m.myBtn.translation = m.positions[m.index]
-'     end if
-' end sub
 
 
