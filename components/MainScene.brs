@@ -1,10 +1,10 @@
 function init()
+    m.myBtn = m.top.findNode("myBtn")
     m.ExitGroup = m.top.FindNode("ExitGroup")
     m.exitAppButton = m.top.findNode("exitButton")
     m.cancelExitDialogeButton = m.top.findNode("cancelExitButton")
     m.exitAppButton.observeField("buttonSelected", "exitButtonSelect")
     m.cancelExitDialogeButton.observeField("buttonSelected", "cancelExitDialoge")
-    m.myBtn = m.top.findNode("myBtn")
     m.myBtn.observeField("buttonSelected", "myButtonClick")
     m.myInterp2 = m.top.FindNode("myInterp2")
     m.transAnimation = m.top.FindNode("transAnimation")
@@ -30,6 +30,8 @@ function myButtonClick()
     ' ' m.transAnimation.control = "start"
     ' m.transL = m.myBtn.translation
     ' ?"Log 1......"m.transL
+
+    ?"Press Right, Left, Up and Down button to movie animation.-------------"
 
 end function
 
@@ -107,7 +109,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 ?"Right"m.XL
 
                 m.transLF = m.myBtn.translation
-            ?"Press right Button and Translation is =="m.transLF
+                ?"Press right Button and Translation is =="m.transLF
             end if
         else if key = "left" and m.myBtn.hasFocus() then
 
@@ -122,12 +124,12 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 ?"Left"m.XL
 
                 m.transLF = m.myBtn.translation
-            ?"Press left Button and Translation is =="m.transLF
+                ?"Press left Button and Translation is =="m.transLF
             end if
 
         else if key = "down" and m.myBtn.hasFocus() then
 
-        
+
             if m.Y < 980
 
                 m.Y = m.Y + 98
@@ -139,7 +141,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 ?"Down"m.Y
 
                 m.transLF = m.myBtn.translation
-            ?"Press down Button and Translation is =="m.transLF
+                ?"Press down Button and Translation is =="m.transLF
             end if
 
         else if key = "up" and m.myBtn.hasFocus() then
@@ -155,7 +157,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 ?"Up"m.Y
 
                 m.transLF = m.myBtn.translation
-            ?"Press up Button and Translation is =="m.transLF
+                ?"Press up Button and Translation is =="m.transLF
 
             end if
         end if
