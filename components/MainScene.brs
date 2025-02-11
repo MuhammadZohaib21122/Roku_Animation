@@ -5,15 +5,20 @@ function init()
     m.cancelExitDialogeButton = m.top.findNode("cancelExitButton")
     m.exitAppButton.observeField("buttonSelected", "exitButtonSelect")
     m.cancelExitDialogeButton.observeField("buttonSelected", "cancelExitDialoge")
-    m.myBtn.observeField("buttonSelected", "myButtonClick")
+    ' m.myBtn.observeField("buttonSelected", "myButtonClick")
     m.myInterp2 = m.top.FindNode("myInterp2")
     m.transAnimation = m.top.FindNode("transAnimation")
     m.transLX = 0
     m.transLY = 0
-    m.transL = [0, 0]
-    m.X = 0
-    m.Y = 0
     m.XL = 0
+    m.transL = [0, 0]
+    ' m.X = 0
+    ' m.Y = 0
+
+    m.X = 140
+    m.Y = 98
+
+    m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
 
     m.top.setFocus(true)
     m.myBtn.setFocus(true)
@@ -21,19 +26,20 @@ function init()
 
 end function
 
-function myButtonClick()
+' function myButtonClick()
 
+'
 
-    ' ?"Tr X on BC"m.transLX
-    ' ?"Tr Y on BC"m.transLY
+'     ' ?"Tr X on BC"m.transLX
+'     ' ?"Tr Y on BC"m.transLY
 
-    ' ' m.transAnimation.control = "start"
-    ' m.transL = m.myBtn.translation
-    ' ?"Log 1......"m.transL
+'     ' ' m.transAnimation.control = "start"
+'     ' m.transL = m.myBtn.translation
+'     ' ?"Log 1......"m.transL
 
-    ?"Press Right, Left, Up and Down button to movie animation.-------------"
+'     ?"Press Right, Left, Up and Down button to movie animation.-------------"
 
-end function
+' end function
 
 
 function cancelExitDialoge()
@@ -97,7 +103,9 @@ function onKeyEvent(key as string, press as boolean) as boolean
         if key = "right" and m.myBtn.hasFocus() then
 
 
-            if m.XL < 1820
+            ' if m.XL < 1820
+            if m.XL < 1680 
+            ' and m.XL >140
 
                 m.X = m.X + 140
                 m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
@@ -113,7 +121,9 @@ function onKeyEvent(key as string, press as boolean) as boolean
             end if
         else if key = "left" and m.myBtn.hasFocus() then
 
-            if m.XL <= 1820 and m.XL > 0
+            ' if m.XL <= 1820 and m.XL > 0
+            if m.XL <= 1680  and m.XL > 140
+
                 m.X = m.X - 140
                 m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
                 m.transAnimation.control = "start"
@@ -129,8 +139,8 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
         else if key = "down" and m.myBtn.hasFocus() then
 
-
-            if m.Y < 980
+            ' if m.Y < 980
+            if m.Y < 882 and m.Y >= 98
 
                 m.Y = m.Y + 98
                 m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
@@ -146,7 +156,8 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
         else if key = "up" and m.myBtn.hasFocus() then
 
-            if m.Y <= 980 and m.Y > 0
+            ' if m.Y <= 980 and m.Y > 0
+            if m.Y <= 980 and m.Y > 98
 
                 m.Y = m.Y - 98
                 m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
@@ -161,6 +172,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
             end if
         end if
+        handled = true
     end if
 
     return handled
