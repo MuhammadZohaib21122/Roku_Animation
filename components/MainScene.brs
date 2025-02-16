@@ -24,6 +24,8 @@ function init()
     m.myBtn.setFocus(true)
 
 
+    
+
 end function
 
 ' function myButtonClick()
