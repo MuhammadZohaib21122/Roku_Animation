@@ -8,6 +8,11 @@ function init()
     ' m.myBtn.observeField("buttonSelected", "myButtonClick")
     m.myInterp2 = m.top.FindNode("myInterp2")
     m.transAnimation = m.top.FindNode("transAnimation")
+    m.rect1 = m.top.findNode("rect1")
+    m.rect2 = m.top.findNode("rect2")
+    m.rect3 = m.top.findNode("rect3")
+    m.rect4 = m.top.findNode("rect4")
+    m.rect5 = m.top.findNode("rect5")
     m.transLX = 0
     m.transLY = 0
     m.XL = 0
@@ -23,8 +28,11 @@ function init()
     m.top.setFocus(true)
     m.myBtn.setFocus(true)
 
+    m.ractangle1T = m.rect1.translation
 
-    
+    m.R1TX = m.ractangle1T.[0]
+    m.R1TY = m.ractangle1T.[1]
+
 
 end function
 
@@ -105,26 +113,31 @@ function onKeyEvent(key as string, press as boolean) as boolean
         if key = "right" and m.myBtn.hasFocus() then
 
 
-            ' if m.XL < 1820
-            if m.XL < 1680 
-            ' and m.XL >140
 
-                m.X = m.X + 140
-                m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
-                m.transAnimation.control = "start"
-                m.transL = m.myBtn.translation
-                sleep(50)
+            if m.XL < 1680
 
-                m.XL = m.X
-                ?"Right"m.XL
+                if m.X + 100 = m.R1TX
 
-                m.transLF = m.myBtn.translation
-                ?"Press right Button and Translation is =="m.transLF
+
+
+                else
+                    m.X = m.X + 140
+                    m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
+                    m.transAnimation.control = "start"
+                    m.transL = m.myBtn.translation
+                    sleep(50)
+
+                    m.XL = m.X
+                    ?"Right"m.XL
+
+                    m.transLF = m.myBtn.translation
+                    ?"Press right Button and Translation is =="m.transLF
+                end if
             end if
         else if key = "left" and m.myBtn.hasFocus() then
 
-            ' if m.XL <= 1820 and m.XL > 0
-            if m.XL <= 1680  and m.XL > 140
+
+            if m.XL <= 1680 and m.XL > 140
 
                 m.X = m.X - 140
                 m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
@@ -141,7 +154,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
         else if key = "down" and m.myBtn.hasFocus() then
 
-            ' if m.Y < 980
+
             if m.Y < 882 and m.Y >= 98
 
                 m.Y = m.Y + 98
@@ -158,7 +171,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
         else if key = "up" and m.myBtn.hasFocus() then
 
-            ' if m.Y <= 980 and m.Y > 0
+
             if m.Y <= 980 and m.Y > 98
 
                 m.Y = m.Y - 98
