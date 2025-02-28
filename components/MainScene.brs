@@ -120,7 +120,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
 
 
-                else
+                else if  m.X + 100 <> m.R1TX
                     m.X = m.X + 140
                     m.myInterp2.keyValue = [[m.X, m.Y], [m.X, m.Y]]
                     m.transAnimation.control = "start"
