@@ -37,11 +37,11 @@
         <Rectangle width="1920" height="98" color="#AAAAAA" translation="[0, 982]" />
         <Rectangle width="140" height="1080" color="#AAAAAA" translation="[1780, 0]" />
 
-        <!-- <Rectangle id="rect1" width="50" height="100" color="#ff0000" translation="[940, 98]" />
+        <Rectangle id="rect1" width="50" height="100" color="#ff0000" translation="[940, 98]" />
         <Rectangle id="rect2" width="50" height="100" color="#ff0000" translation="[940, 294]" />
         <Rectangle id="rect3" width="50" height="100" color="#ff0000" translation="[940, 490]" />
         <Rectangle id="rect4" width="50" height="100" color="#ff0000" translation="[940, 686]" />
-        <Rectangle id="rect5" width="50" height="100" color="#ff0000" translation="[940, 882]" /> -->
+        <Rectangle id="rect5" width="50" height="100" color="#ff0000" translation="[940, 882]" />
 
         <Group id="ExitGroup" visible="false" translation="[0,0]">
             <Poster width="1920" height="1080" uri="pkg:/images/background_overlay.png" />
