@@ -71,17 +71,17 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
         if key = "back"
 
-            if m.myBtn.hasFocus()
+            ' if m.myBtn.hasFocus()
 
-                m.ExitGroup.visible = true
-                m.myBtn.setFocus(false)
-                m.cancelExitDialogeButton.setFocus(true)
-                handled = true
+            '     m.ExitGroup.visible = true
+            '     m.myBtn.setFocus(false)
+            '     m.cancelExitDialogeButton.setFocus(true)
+            '     handled = true
 
-            else if m.ExitGroup.visible = true
-                m.ExitGroup.visible = false
-                m.myBtn.setFocus(true)
-                handled = true
+            ' else if m.ExitGroup.visible = true
+            '     m.ExitGroup.visible = false
+            '     m.myBtn.setFocus(true)
+            '     handled = true
 
             end if
         end if
