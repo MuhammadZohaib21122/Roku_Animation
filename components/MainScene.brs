@@ -84,6 +84,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 handled = true
 
             end if
+            
         end if
 
         if key = "right" and m.cancelExitDialogeButton.hasFocus()
